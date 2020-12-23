@@ -1,5 +1,11 @@
 import React from 'react'
 
+/**
+ * https://zh-hans.reactjs.org/tutorial/tutorial.html#passing-data-through-props
+ * @returns {*}
+ * @constructor
+ */
+
 function Games() {
 
     return (
@@ -10,10 +16,17 @@ function Games() {
 
 
 class Square extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: null,
+        };
+    }
+
     render() {
         return (
-            <button className="square">
-                {/* TODO */}
+            <button className="square" onClick={() => alert('click')}>
+                {this.props.value}
             </button>
         );
     }
@@ -21,7 +34,7 @@ class Square extends React.Component {
 
 class Board extends React.Component {
     renderSquare(i) {
-        return <Square />;
+        return <Square value={i} />;
     }
 
     render() {
