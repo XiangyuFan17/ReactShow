@@ -28,6 +28,16 @@
   color: #61dafb;
 }
 
+.App-showScroll {
+  width: 60vw;
+  height: 20vh;
+  background-color: grey;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -1,20 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { ThemeProvider } from '@material-ui/core/styles';
 import App from './App';
-import Games from './GameTutorial/Games';
-import './GameTutorial/Games.css';
+import theme from './theme';
+
+// import Games from './GameTutorial/Games';
+// import './GameTutorial/Games.css';
+
+// import FillipIndex from './Fillip/FilipIndex';
+// import './Fillip/Fillip.css';
+
 import reportWebVitals from './reportWebVitals';
 
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
+
+
 ReactDOM.render(
-    <Games />,
-    document.getElementById('root')
+    <ThemeProvider theme={theme}>
+        {}
+        <CssBaseline />
+        <App />
+    </ThemeProvider>,
+    document.querySelector("#root")
 );
 
 

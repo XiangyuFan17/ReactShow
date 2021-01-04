@@ -1,28 +1,44 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react'
+import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+import Link from '@material-ui/core/Link';
+import ProTip from './ProTip';
 
-function App() {
 
+function Copyright() {
     return (
-        <ShoppingList name="Mark" />
+        <Typography variant="body2" color="textSecondary" align="center">
+            {'Copyright © '}
+            <Link color="inherit" href="https://material-ui.com/">
+                Your Website
+            </Link>{' '}
+            {new Date().getFullYear()}
+            {'.'}
+        </Typography>
     );
-
 }
 
-class ShoppingList extends React.Component {
-    render() {
-        return (
-            <div className="shopping-list">
-                <h1>Shopping List for {this.props.name}</h1>
-                <ul>
-                    <li>Instagram</li>
-                    <li>WhatsApp</li>
-                    <li>Oculus</li>
-                </ul>
+export default function App() {
+    return (
+        <Container maxWidth="sm">
+            <Box my={4}>
+                <Typography variant="h4" component="h1" gutterBottom>
+                    Create React App v4-beta example
+                </Typography>
+                <ProTip />
+                <Copyright />
+            </Box>
+            <div className = "App-showScroll" >
+                <div style = {{height: "100%", width: "340px", background:"red"}}>aaa</div>
+                <div style = {{height: "100%", width: "340px", background:"lightblue"}}>bbb</div>
+                <div style = {{height: "100%", width: "340px", background:"yellow"}}>ccc</div>
+                <div style = {{height: "100%", width: "340px", background:"green"}}>ddd</div>
+                <div style = {{height: "100%", width: "340px", background:"white"}}>eee</div>
+                <div style = {{height: "100%", width: "340px", background:"brown"}}>fff</div>
             </div>
-        );
-    }
+        </Container>
+    );
 }
-
-export default App;
